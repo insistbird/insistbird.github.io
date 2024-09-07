@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<style type="text/css">
-		body,iframe{margin: 0;padding: 0;}
-		iframe { 
-		  border: none;
-		  width: 100%;  
-		  height: 100vh;  
-		 overflow: hidden;  
-        scrollbar-width: none; 
-		}
-	</style>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tiktok shop</title>
+    <style type="text/css">
+        html{     
+            overflow: hidden;
+        }
+        body{   
+            margin: 0;
+            padding: 0;
+        }
+        #iframepage{
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-<iframe id="fullscreen-iframe" frameborder="no" scrolling="auto"   allowtransparency="yes" src="https://bilingualdp.com/"></iframe>
+<iframe src="https://bilingualdp.com/" id="iframepage" scrolling="auto" onload="changeFrameHeight()" frameborder="0"></iframe>
+<!-- 以下JS部分是让iframe自适应高度，兼容多种浏览器 -->
+<script type="text/javascript">
+    function changeFrameHeight(){
+        var ifm= document.getElementById("iframepage");
+        ifm.height=document.documentElement.clientHeight;
+    }
+    window.onresize=function(){
+        changeFrameHeight();
+    }
+</script>
 </body>
 </html>
